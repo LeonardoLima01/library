@@ -17,7 +17,7 @@ addBookButton.addEventListener("click", () => {
 
 // Get and redirect forms input
 form.addEventListener("submit", function (event) {
-  event.preventDefault(); // Prevents the form from autosubmitting
+  event.preventDefault(); // Prevents the form from auto-submitting
 
   let title = document.querySelector("#title").value;
   let author = document.querySelector("#author").value;
@@ -31,18 +31,21 @@ form.addEventListener("submit", function (event) {
 // Array to store books
 let myLibrary = [];
 
-function Book(title, author, pages, read) {
-  // The constructor...
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
+// Refactored Book constructor
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
 }
 
 function addBookToLibrary(book) {
-  // Do stuff here
+  // Insert book into books array
   myLibrary.push(book);
 
+  // Display it on screen
   displayBooks();
 }
 
