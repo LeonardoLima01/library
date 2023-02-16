@@ -10,6 +10,9 @@ let count = 0;
 
 // Show/hide pop-up form
 addBookButton.addEventListener("click", () => {
+  // Reset placeholder name
+  document.querySelector("#pages").placeholder;
+
   container.style.display = "none";
   popupForm.style.display = "flex";
   body.style.display = "flex";
@@ -24,8 +27,20 @@ form.addEventListener("submit", function (event) {
   let pages = document.querySelector("#pages").value;
   let read = document.querySelector("#read");
 
+  // If pages value isn't a number
+  if (isNaN(pages) || pages < 1) {
+    (document.querySelector("#pages").value = ""),
+      (document.querySelector("#pages").placeholder = "only positive NUMBERS");
+    return;
+  }
+
   let book = new Book(title, author, pages, read.checked);
   addBookToLibrary(book);
+
+  // Reset "Add book" form input text
+  document.querySelector("#title").value = "";
+  document.querySelector("#author").value = "";
+  document.querySelector("#pages").value = "";
 });
 
 // Array to store books
@@ -73,7 +88,10 @@ function displayBooks() {
   // Update innerHTML
   titleDiv.innerHTML = '"' + myLibrary[count].title + '"';
   authorDiv.innerHTML = myLibrary[count].author;
-  pagesDiv.innerHTML = myLibrary[count].pages + " pages";
+  // 'Pages' changes to 'page' depending on user input
+  myLibrary[count].pages > 1
+    ? (pagesDiv.innerHTML = myLibrary[count].pages + " pages")
+    : (pagesDiv.innerHTML = myLibrary[count].pages + " page");
   deleteButton.innerHTML = "Remove";
 
   // Change (Read/Not read) div based on the checkbox
