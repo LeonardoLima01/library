@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+}
+
+#root {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  min-height: 8vh;
+  display: flex;
+  align-items: center;
+  padding: 0px 20vw;
+}
+
+nav h1 {
+  font-size: 1.8vw;
+  margin: 0;
+  height: fit-content;
+}
+
+main {
+  padding: 6vh 20vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5vw;
+  background-color: #eee;
+  flex: 1;
+}
+
+main > button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1vw;
+  border-radius: 8px;
+  padding: 10px;
+  transition: background-color 0.5s;
+}
+
+main > button:hover {
+  background-color: #eee;
+}
+
+#modal-container {
+  background-color: #eee;
+  height: 325px;
+  width: 300px;
+  border-radius: 15px;
+  padding: 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#modal-container h1 {
+  margin: 0;
+}
+
+#modal-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000e1;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  width: 100%;
+}
+
+form input {
+  border: 1px solid black;
+  padding: 8px 5px;
+  border-radius: 7px;
+  border: 0;
+  outline: none;
+  font-size: 16px;
+}
+
+#modal-add-button {
+  padding: 10px;
+  border-radius: 5px;
+  border: 0;
+  background-color: rgb(64, 226, 145);
+  cursor: pointer;
+  transition: transform 0.25s;
+}
+
+#modal-add-button:hover {
+  transform: scale(1.04);
+}
+
+#modal-add-button:active {
+  transform: scale(0.95);
+}
+
+#read-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5vw;
+}
+
+#read-checkbox {
+  width: 18px;
+  height: 18px;
+  margin-bottom: 3.5px;
+  cursor: pointer;
+}
+
+.read {
+  background-color: rgb(121, 255, 161);
+}
+
+.not-read {
+  background-color: rgb(255, 141, 126);
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  width: 100%;
+  gap: 40px;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  line-height: 1.2;
+  gap: 20px;
+  font-size: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.card-container > p {
+  margin: 0;
+}
+
+.card-read-button {
+  border: 0;
+  padding: 10px 15px;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.card-remove-button {
+  background-color: #e7e7e7;
+  border: 0;
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+button {
+  cursor: pointer;
+  transition: transform 0.25s;
+}
+
+button:hover {
+  transform: scale(1.033);
+}
