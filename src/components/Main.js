@@ -17,18 +17,12 @@ import {
   onSnapshot,
   collection,
   addDoc,
-  setDoc,
   doc,
-  docs,
-  getDoc,
-  getDocs,
   updateDoc,
 } from "firebase/firestore";
 import Card from "./Card";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
+// Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBf8InZUUzmZf0ucyFKzcuBrJJ5TKDb-yM",
   authDomain: "library-c52cb.firebaseapp.com",

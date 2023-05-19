@@ -3,7 +3,6 @@ import {
   getDoc,
   deleteDoc,
   collection,
-  getDocs,
   updateDoc,
 } from "firebase/firestore";
 import { db } from "./Main";
